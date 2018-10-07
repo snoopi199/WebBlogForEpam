@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    @*<script src="~/Scripts/JavaScript.js"></script>*@
+    @*<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>*@
+    <script src="~/Scripts/jquery.min.js"></script>
+    <title>@ViewBag.Title - Blog</title>
+</head>
+<body>
+   
+        <header class="clearfix" id="header">
+            <a href="~/Blog/Main">
+                <img class="icon" src="~/Images/Blog.png" alt="icon" />
+                <div class="name">Blog</div>
+            </a>
+
+        </header>
+
+
+        <div class="container clearfix">
+            <nav>
+                <ul>
+                    <li>@Html.ActionLink("Главная", "Main", "Blog")</li>
+                    <li>@Html.ActionLink("Гостевая", "Guest", "Blog")</li>
+                    <li>@Html.ActionLink("Анкета", "Questionnaire", "Blog")</li>
+                </ul>
+            </nav>
+
+            <section class="content ">
+                @RenderBody()
+            </section>
+
+        </div>
+
+        <footer>
+            <p>&copy; Blog - все права зашищены</p>
+        </footer>
+  
+
+    <a class="button-top" id="button-top" href="#header"><img src="~/Images/backTop.png" alt="TOP" /></a>
+    <script>
+        jQuery(function ($) {
+            $(".button-top").click(function () {
+                var elementClick = $(this).attr("href")
+                var destination = $(elementClick).offset().top;
+                jQuery("html:not(:animated),body:not(:animated)").animate({ scrollTop: destination }, 800);
+                return false;
+            });
+           
+        });
+    </script>
+
+</body>
+</html>

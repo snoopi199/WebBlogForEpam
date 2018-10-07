@@ -1,0 +1,32 @@
+﻿@model WebBlog.Models.Question
+@{int i = 0;
+}
+<fieldset>
+
+    <h2 class="question-title">@Model.QuestionName</h2>
+    @*Add partrial*@
+    @if (Model.Type == 0)//checkbox
+    {
+        foreach (var item in Model.Answers)
+        {
+            <div class="label-input-wrap">
+                <input type="checkbox" name="name" value="" id="@i" />
+                <label for="name">@item.AnswerName</label>
+
+            </div>
+        }
+    }
+    @if (Model.Type == 1)//radiobutton
+    {
+        foreach (var item in Model.Answers)
+        {
+            <div class="label-input-wrap">
+                <input type="radio" name="name" value="" id="@i" />
+                <label for="name">@item.AnswerName</label>
+
+            </div>
+        }
+    }
+
+</fieldset>
+
