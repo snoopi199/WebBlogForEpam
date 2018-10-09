@@ -336,3 +336,23 @@ footer p {
     margin-left:270px;
 
 }
+.questionnaire-result {
+    background-color: #fff;
+    box-shadow: 0 0 5px 1px #cecece;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 20px;
+}
+.questionnaire-result h2{
+    color:red;
+    text-align:center;
+    margin-top:20px;
+    font-size:25px
+
+}
+.questionnaire-result .info{
+    margin:100px;
+}
+.questionnaire-result p{
+    font-size:20px;
+}

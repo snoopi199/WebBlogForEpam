@@ -1,32 +1,40 @@
 ﻿@model WebBlog.Models.Question
-@{int i = 0;
-}
+
 <fieldset>
 
-    <h2 class="question-title">@Model.QuestionName</h2>
+    <h2 class="question-title">@Model.Title</h2>
     @*Add partrial*@
-    @if (Model.Type == 0)//checkbox
-    {
-        foreach (var item in Model.Answers)
+   
+        @*foreach (var item in Model.Answers)
         {
             <div class="label-input-wrap">
                 <input type="checkbox" name="name" value="" id="@i" />
                 <label for="name">@item.AnswerName</label>
 
             </div>
-        }
-    }
-    @if (Model.Type == 1)//radiobutton
+        }*@
+   
+        @OutputQuestions(Model.Answers)
+    
+
+</fieldset>
+@helper OutputQuestions(IEnumerable<WebBlog.Models.Answer> questions)
     {
+    int i = 0;
         foreach (var item in Model.Answers)
         {
             <div class="label-input-wrap">
-                <input type="radio" name="name" value="" id="@i" />
+                @if (Model.Type == "radiobutton")
+                {
+                    <input type="radio" name="@Model.Name" value="@i"  />
+                }
+                @if (Model.Type == "checkbox")
+                {
+                    <input type="checkbox" name="@Model.Name" value="@i"  />
+                }
                 <label for="name">@item.AnswerName</label>
-
             </div>
+            i++;
         }
-    }
-
-</fieldset>
+}
 

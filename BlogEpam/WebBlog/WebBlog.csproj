@@ -46,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -148,6 +154,7 @@
     </Compile>
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\Article.cs" />
+    <Compile Include="Models\BlogContext.cs" />
     <Compile Include="Models\DataContext.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Question.cs" />
@@ -184,6 +191,7 @@
     <Content Include="Views\Blog\Article.cshtml" />
     <Content Include="Views\Blog\Guest.cshtml" />
     <Content Include="Views\Blog\GetQuestion.cshtml" />
+    <Content Include="Views\Blog\QuestionnaireResult.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

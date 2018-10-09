@@ -72,28 +72,28 @@ namespace WebBlog.Models
 
         private void CreateQuestions()
         {
-            questions.Add(new Question("Откуда вы узнали про наш веб-сайт?", QustionaryType.checkbox,
+            questions.Add(new Question("Откуда вы узнали про наш веб-сайт?", "checkbox",
                 new Answer[]{new Answer("От друзей",3),new Answer("Рекомендовали на работе ",3),
                 new Answer("Увидел рекламу на других сайтах",3),new Answer("Увидел рекламу на youtube",3) }));
-            questions.Add(new Question("Насколько сложно ориентироваться на нашем веб-сайте?", QustionaryType.radiobutton,
+            questions.Add(new Question("Насколько сложно ориентироваться на нашем веб-сайте?","radiobutton",
                 new Answer[]{new Answer("Очень просто ",4),new Answer("Скорее просто",3),
                 new Answer("Нормально",2),new Answer("Скорее сложно",1), new Answer("Очень сложно",0) }));
-            questions.Add(new Question("Насколько сложно найти на нашем веб-сайте нужную информацию?", QustionaryType.radiobutton,
+            questions.Add(new Question("Насколько сложно найти на нашем веб-сайте нужную информацию?", "radiobutton",
                 new Answer[]{new Answer("Очень просто ",4),new Answer("Скорее просто",3),
                 new Answer("Нормально",2),new Answer("Скорее сложно",1), new Answer("Очень сложно",0) }));
-            questions.Add(new Question("Как Вы оцениваете внешний вид нашего веб-сайта?", QustionaryType.radiobutton,
+            questions.Add(new Question("Как Вы оцениваете внешний вид нашего веб-сайта?","radiobutton",
                 new Answer[]{new Answer("Очень хороший",4),new Answer("Хороший",3),
                 new Answer("Нормальный",2),new Answer("Плохой",1), new Answer("Мне он совсем не нравится",0) }));
-            questions.Add(new Question("Как Вы оцениваете актуальность содержания на нашем веб-сайте?", QustionaryType.radiobutton,
+            questions.Add(new Question("Как Вы оцениваете актуальность содержания на нашем веб-сайте?", "radiobutton",
                 new Answer[]{new Answer("Актуальное",4),
                 new Answer("Скорее актуальное",2),new Answer("Не слишком актуальное",1), new Answer("Совсем не актуальное",0) }));
-            questions.Add(new Question("Насколько Вы в общем довольны нашим веб-сайтом?", QustionaryType.radiobutton,
+            questions.Add(new Question("Насколько Вы в общем довольны нашим веб-сайтом?", "radiobutton",
                new Answer[]{new Answer("Очень доволен/льна",4),new Answer("Доволен/льна",3),
                 new Answer("В среднем доволен/льна",2),new Answer("Недоволен/льна",1), new Answer("Очень недоволен/льна",0) }));
-            questions.Add(new Question("Вы бы рекомендовали наш веб-сайт другим людям?", QustionaryType.radiobutton,
+            questions.Add(new Question("Вы бы рекомендовали наш веб-сайт другим людям?", "radiobutton",
               new Answer[]{new Answer("Несомненно да",4),new Answer("Вероятно да",3),
                 new Answer("Я не знаю",2),new Answer("Вероятно нет",1), new Answer("Несомненно нет",0) }));
-            questions.Add(new Question("Почему вы пользуетесь нашим сайтом?", QustionaryType.checkbox,
+            questions.Add(new Question("Почему вы пользуетесь нашим сайтом?", "checkbox",
                new Answer[]{new Answer("Интересные статьи",3),new Answer("Удобный дизайн ",3),
                 new Answer("Свежая информация",3),new Answer("Бесплатный контент",3) }));
 

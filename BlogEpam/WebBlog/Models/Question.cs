@@ -5,17 +5,15 @@ using System.Web;
 
 namespace WebBlog.Models
 {
-    public enum QustionaryType:byte
-    {
-        checkbox,
-        radiobutton
-    }
-
     public class Question
     {
-        public string QuestionName { get; set; }
+        static int count = 0;
+       
+        public string Name { get; set; }
+        public string Title { get; set; }
 
-        public byte Type { get; set; }
+
+        public string Type { get; set; }
 
         private ICollection<int> checkeds;
 
@@ -32,10 +30,12 @@ namespace WebBlog.Models
             get { return answers; }
             set { answers = value; }
         }
-        public Question(string question, QustionaryType type, Answer[] answers)
+        public Question(string question, string type, Answer[] answers)
         {
-            QuestionName = question;
-            Type = (byte)type;
+            Name = "question" + count;
+            count++;
+            Title = question;
+            Type = type;
             this.answers = new List<Answer>();
             AddAnswers(answers);
             checkeds = new List<int>();
