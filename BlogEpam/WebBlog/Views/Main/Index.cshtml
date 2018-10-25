@@ -1,0 +1,14 @@
+﻿@using WebBlog.Models.Entity;
+
+@model System.Collections.Generic.List<Article>
+
+@foreach (var article in Model)
+{<div class="article">
+        <a href="/Main/Article?id=@article.Id.ToString()">
+            <p class="article-title">@article.Title</p>
+            <p class="article-date">@article.Date.ToString()</p>
+            <p class="article-text">@article.Text</p>
+        </a>
+    </div>
+}
+

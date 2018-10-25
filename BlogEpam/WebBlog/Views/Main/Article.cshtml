@@ -1,0 +1,13 @@
+﻿@model WebBlog.Models.Entity.Article
+
+@{
+    ViewBag.Title = "Article";
+}
+
+<div class="article-page">
+    <h2>@Model.Title</h2>
+    <p>@Model.Date</p>
+    <p>@Model.User.Name</p>
+    <p>@Model.Text</p>
+</div>
+

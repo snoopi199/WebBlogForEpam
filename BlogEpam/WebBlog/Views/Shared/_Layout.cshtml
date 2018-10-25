@@ -12,7 +12,7 @@
 <body>
    
         <header class="clearfix" id="header">
-            <a href="~/Blog/Main">
+            <a href="~/Main/Index">
                 <img class="icon" src="~/Images/Blog.png" alt="icon" />
                 <div class="name">Blog</div>
             </a>
@@ -23,9 +23,10 @@
         <div class="container clearfix">
             <nav>
                 <ul>
-                    <li>@Html.ActionLink("Главная", "Main", "Blog")</li>
-                    <li>@Html.ActionLink("Гостевая", "Guest", "Blog")</li>
-                    <li>@Html.ActionLink("Анкета", "Questionnaire", "Blog")</li>
+                    <li>@Html.ActionLink("Главная", "Index", "Main")</li>
+                    <li>@Html.ActionLink("Гостевая", "Index", "Guest")</li>
+                    <li>@Html.ActionLink("Анкета", "Index", "Questionnaire")</li>
+                    
                 </ul>
             </nav>
 

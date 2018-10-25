@@ -1,0 +1,40 @@
+﻿@using WebBlog.Models.Entity;
+
+@model System.Collections.Generic.List<Comment>
+
+
+<div class="guest-form">
+    <form method="post">
+        <input type="hidden" value="@DateTime.Now" name="date" />
+        <h2>Оставить отзыв</h2>
+        <label for="email">Введите ваш email</label>
+        <br />
+        <input type="text" name="email" placeholder="Email" />
+        <br />
+        <label for="name">Введите ваше имя</label>
+        <br />
+        <input type="text" name="name" placeholder="Имя" />
+        <br />
+        <label for="text">Отзыв</label>
+        <br />
+        <textarea name="text" placeholder="Текст отзыва"></textarea>
+        <br />
+        <input type="submit" name="submit" value="Отправить" />
+    </form>
+</div>
+
+@if (Model.Count() != 0)
+{
+    <div class="reviers">
+        @foreach (var Item in Model)
+        {
+
+            <div class="review">
+                <p class="review-name">@Item.Users.Name</p>
+                <p class="review-date">@Item.Date.ToString()</p>
+                <p class="review-text">@Item.Text</p>
+            </div>
+        }
+    </div>
+}
+

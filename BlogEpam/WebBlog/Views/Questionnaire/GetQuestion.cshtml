@@ -1,0 +1,29 @@
+﻿@model WebBlog.Models.Entity.QuestionnaireComponents.Question
+@using WebBlog.Models.Entity.QuestionnaireComponents
+
+<fieldset>
+    <h2 class="question-title">@Model.Title</h2>
+    @OutputQuestions(Model.Answer, Model.Title)
+
+</fieldset>
+
+
+@helper OutputQuestions(ICollection<Answer> questions, string name)
+    {
+        foreach (var Item in questions)
+        {
+            <div class="label-input-wrap">
+                @if (Model.Type == "radiobutton")
+                {
+                    <input type="radio" name="@name" value="@Item.Id" />
+                }
+                @if (Model.Type == "checkbox")
+                {
+                    <input type="checkbox" name="@name" value="@Item.Id" />
+                }
+                <label for="name">@Item.Title</label>
+            </div>
+        }
+}
+
+
