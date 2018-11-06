@@ -4,24 +4,23 @@
 <fieldset>
     <h2 class="question-title">@Model.Title</h2>
     @OutputQuestions(Model.Answer, Model.Title)
-
 </fieldset>
 
 
-@helper OutputQuestions(ICollection<Answer> questions, string name)
+@helper OutputQuestions(ICollection<Answer> answers, string name)
     {
-        foreach (var Item in questions)
+        foreach (var ansver in answers)
         {
             <div class="label-input-wrap">
                 @if (Model.Type == "radiobutton")
                 {
-                    <input type="radio" name="@name" value="@Item.Id" />
+                    <input type="radio" name="@name" value="@ansver.Id" />
                 }
                 @if (Model.Type == "checkbox")
                 {
-                    <input type="checkbox" name="@name" value="@Item.Id" />
+                    <input type="checkbox" name="@name" value="@ansver.Id" />
                 }
-                <label for="name">@Item.Title</label>
+                <label for="name">@ansver.Title</label>
             </div>
         }
 }

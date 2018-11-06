@@ -10,5 +10,8 @@ namespace WebBlog.Contracts.QueryRepositories
     public interface IQuestionnaireQuery
     {
         Questionnaire GetQuestionnaireByTitle(string title);
+        Questionnaire GetById(Guid id);
+
+        IEnumerable<Answer> GetAllAnswersForQuestionnaire(Guid questionnaireId);
     }
 }

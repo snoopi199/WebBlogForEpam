@@ -4,15 +4,16 @@
     <h1>Оценка веб-сайта – Оценка работы сайта посетителями</h1>
     <h2>Здравствуйте, потратьте, пожалуйста, несколько минут своего времени на заполнение следующей анкеты.</h2>
 
-    <form method="post">
-        <label for="name">Введите ваше имя</label>
+    <form method="post" action="/Questionnaire/QuestionnaireResult">
+        <input type="hidden" value="@Model.Id" name="questionnaireId" />    
+        <label for="personName">Введите ваше имя</label>
         <br />
         <input type="text" name="personName" placeholder="Имя" />
         @foreach (var item in Model.Questions)
-        {
-            @Html.Partial("GetQuestion", item)
-        }
-        <label for="Recomendations">Как на ваш взгляд можно улучшить веб сайт</label>
+    {
+        @Html.Partial("GetQuestion", item)
+}
+        <label for="recomendations">Как на ваш взгляд можно улучшить веб сайт</label>
         <br />
         <textarea name="recomendations" placeholder="Ваши рекомендации"></textarea>
         <br />

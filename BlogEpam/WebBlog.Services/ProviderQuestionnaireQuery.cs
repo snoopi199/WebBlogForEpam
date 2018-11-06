@@ -16,8 +16,7 @@ namespace WebBlog.Services
 
         public ProviderQuestionnaireQuery(IQuestionnaireQuery questionnaireQuery)
         {
-            this.questionnaireQuery = questionnaireQuery;
-           
+            this.questionnaireQuery = questionnaireQuery;          
         }
 
         public Questionnaire GetQuestionnaireByTitle(string title)

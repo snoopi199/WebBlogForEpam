@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebBlog.CR;
+using WebBlog.Models.EntityForViews;
 using WebBlog.Services;
 
 namespace WebBlog.Web.Controllers
@@ -24,14 +25,18 @@ namespace WebBlog.Web.Controllers
             var questionnaire = commentQuery.GetQuestionnaireByTitle("Оцените пожалуйста наш сайт");
             return View(questionnaire);
         }
-        //[HttpPost]
-        //public ActionResult QuestionnaireResult(string personName, string recomendations)
-        //{     
-        //    var questionnaireResult = new QuestionnaireResult(Request.Form, creatorOfInctances.GetInstanceQuestionnaireQuery(),
-        //        creatorOfInctances.GetInstanceWebBlogRatingRepository());
-            
-        //    return View();
-        //}
+        [HttpPost]
+        public ActionResult QuestionnaireResult()
+        {
+            var questionnaireResult = new QuestionnaireResult(Request.Form,
+                creatorOfInctances.GetInstanceQuestionnaireQuery(),
+                creatorOfInctances.GetInstanceWebBlogRatingRepository());
+            var userMark = questionnaireResult.UserEvaluation();
+
+            var questionnaireEntity = new QuestionnaireEntity { Name = Request.Form["personeName"], Mark = userMark};
+
+            return View(questionnaireEntity);
+        }
 
         public ActionResult GetQuestion()
         {

@@ -21,7 +21,24 @@ namespace WebBlog.DB.QueryRepositories
            //sort by cost 
             return questionnaire;
         }
+
+        public Questionnaire GetById(Guid id)
+        {
+            var questionnaire = GetQuery().FirstOrDefault(x => x.Id == id);
+            return questionnaire;
+        }
+
+        public IEnumerable<Answer> GetAllAnswersForQuestionnaire(Guid questionnaireId)
+        {
+            var questionnaire = GetQuery().FirstOrDefault(x => x.Id == questionnaireId);
+
+            var answers = new List<Answer>();
+
+            questionnaire.Questions.ToList().ForEach(x => answers.AddRange(x.Answer));
+
+            return answers;
           
+        }
 
         private IQueryable<Questionnaire> GetQuery()
             => _context.Set<Questionnaire>().Include(x=>x.Questions.Select(a=>a.Answer));

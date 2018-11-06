@@ -199,6 +199,7 @@
     <Content Include="Views\Guest\Index.cshtml" />
     <Content Include="Views\Questionnaire\Index.cshtml" />
     <Content Include="Views\Questionnaire\GetQuestion.cshtml" />
+    <Content Include="Views\Questionnaire\QuestionnaireResult.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebBlog.Contracts\WebBlog.Contracts.csproj">
